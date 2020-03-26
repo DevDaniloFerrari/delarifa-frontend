@@ -7,7 +7,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
-  { path: '', component: InitialPageComponent}
+  {
+    path: '', component: InitialPageComponent,
+    children: [
+      {
+        path: 'authentication',
+        loadChildren: '../authentication/authentication.module#AuthenticationModule'
+      },
+      {
+        path: 'home',
+        loadChildren: '../home/home.module#HomeModule'
+      }
+    ]
+  }
 ];
 
 @NgModule({
@@ -16,6 +28,6 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class ContainerModule { }
