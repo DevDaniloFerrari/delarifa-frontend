@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'authentication',
-    loadChildren: '../authentication/authentication.module#AuthenticationModule'
+    loadChildren: './authentication/authentication.module#AuthenticationModule'
   },
   {
     path: '**',

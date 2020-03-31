@@ -8,8 +8,6 @@
             <div class="col-md-10 offset-md-1">
             </div>
         </div>
-    </div>
-</div>
 
 <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
     <div class="form-group required">
@@ -48,4 +46,5 @@
             <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModel.valid">Registrar</button>
         </div>
     </div>
+    
 </form>
