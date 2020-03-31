@@ -11,10 +11,6 @@ const routes: Routes = [
     path: '', component: InitialPageComponent,
     children: [
       {
-        path: 'authentication',
-        loadChildren: '../authentication/authentication.module#AuthenticationModule'
-      },
-      {
         path: 'home',
         loadChildren: '../home/home.module#HomeModule'
       }

@@ -6,7 +6,16 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: './modules/container/container.module#ContainerModule'
+  },
+  {
+    path: 'authentication',
+    loadChildren: '../authentication/authentication.module#AuthenticationModule'
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
+
 ];
 
 @NgModule({
