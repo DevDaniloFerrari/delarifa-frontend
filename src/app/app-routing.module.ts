@@ -9,13 +9,8 @@ const routes: Routes = [
   },
   {
     path: 'authentication',
-    loadChildren: './authentication/authentication.module#AuthenticationModule'
-  },
-  {
-    path: '**',
-    redirectTo: ''
+    loadChildren: './modules/authentication/authentication.module#AuthenticationModule'
   }
-
 ];
 
 @NgModule({
