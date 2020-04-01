@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { ViewEncapsulation } from '@angular/core';
 import { UserService } from '@shared/providers';
 
 
@@ -8,7 +7,6 @@ import { UserService } from '@shared/providers';
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./../style/authentication.css'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class RegistrationComponent implements OnInit {
 
@@ -29,7 +27,7 @@ export class RegistrationComponent implements OnInit {
             switch (element.code) {
               case 'DuplicateUserName':
                 this.toastr.error('Usuário já cadastrado.', 'Falha.');
-                break ;
+                break;
               default:
                 this.toastr.error(element.description, 'Falha.');
                 break;
@@ -40,7 +38,7 @@ export class RegistrationComponent implements OnInit {
       err => {
         console.log(err);
       }
-      );
-    }
-
+    );
   }
+
+}

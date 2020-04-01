@@ -1,31 +1,37 @@
-<div>
-    <button id="back" routerLink="/home" type="button" class="btn btn-secondary">Voltar</button>
-</div>
+<div class="background-color">
+    <div>
+        <button id="back" routerLink="/home" type="button" class="btn btn-secondary">Voltar</button>
+    </div>
 
-<div class="wrapper">
-    <div class="wrapped-div">
-        <div class="tab-header">
-            <h2 routerLink='/login' routerLinkActive='class'>Entrar</h2>
-            <h2 routerLink='/registration' routerLinkActive='class'>Registrar-se</h2>
-        </div>
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
+    <div class="wrapper">
+        <div class="wrapped-div">
+            <div class="tab-header">
+                <h2 routerLink='/login' routerLinkActive='class'>Entrar</h2>
+                <h2 routerLink='/registration' routerLinkActive='class'>Registrar-se</h2>
             </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                </div>
+            </div>
+
+            <img src="/assets/img/login.png" class="mx-auto d-block">
+            <form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
+                <div class="form-group">
+                    <label>Usuário: </label>
+                    <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label>Senha: </label>
+                    <input type="password" class="form-control" #Password="ngModel" name="Password"
+                        [(ngModel)]="formModel.Password" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8 offset-md-2">
+                        <button type="submit" class="btn btn-lg btn-block" [disabled]="form.invalid">Entrar</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        
-<img src="/assets/img/login.png" class="mx-auto d-block">
-<form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
-    <div class="form-group">
-        <label>Usuário: </label>
-        <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required>
     </div>
-    <div class="form-group">
-        <label>Senha: </label>
-        <input type="password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-8 offset-md-2">
-            <button type="submit" class="btn btn-lg btn-block" [disabled]="form.invalid">Entrar</button>
-        </div>
-    </div>
-</form>
+</div>

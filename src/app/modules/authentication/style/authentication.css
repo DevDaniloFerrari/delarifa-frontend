@@ -2,12 +2,14 @@ html {
     min-height: 100%;
 }
 
-body {
+.background-color {
     background: -webkit-linear-gradient(left, #FFE53B, #FF2525); 
     background: -o-linear-gradient(right, #FFE53B, #FF2525); 
     background: -moz-linear-gradient(right, #FFE53B, #FF2525); 
     background: linear-gradient(to right, #FFE53B, #FF2525); 
     background-color: #FFE53B; 
+    width: 100vw;
+    height: 100vh;
 }
 
 input.form-control,
