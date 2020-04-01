@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,7 +23,8 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    SharedModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

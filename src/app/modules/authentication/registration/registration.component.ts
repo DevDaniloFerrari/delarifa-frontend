@@ -1,13 +1,13 @@
-import { UserService } from '../../../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ViewEncapsulation } from '@angular/core';
+import { UserService } from '@shared/providers';
 
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./../authentication.component.css'],
+  styleUrls: ['./../style/authentication.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class RegistrationComponent implements OnInit {

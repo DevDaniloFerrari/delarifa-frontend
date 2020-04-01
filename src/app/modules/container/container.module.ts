@@ -3,36 +3,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { Routes, RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ContainerRoutingModule } from './container-routing.module';
 
-const routes: Routes = [
-  {
-    path: '', component: InitialPageComponent,
-    children: [
-      {
-        path: 'home',
-        loadChildren: '../home/home.module#HomeModule'
-      },
-      {
-        path: 'about',
-        loadChildren: '../about/about.module#AboutModule'
-      },
-      {
-        path: '**',
-        redirectTo: '/home'
-      }
 
-    ]
-  }
-];
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, InitialPageComponent, NavbarComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
-  ],
-  exports: [RouterModule]
+    ContainerRoutingModule
+  ]
 })
 export class ContainerModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/shared/user.service';
+import { UserService } from 'src/app/shared/providers/user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
@@ -8,7 +8,7 @@ import { ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./../authentication.component.css'],
+  styleUrls: ['./../style/authentication.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
