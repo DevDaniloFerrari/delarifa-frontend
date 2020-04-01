@@ -103,3 +103,9 @@ div.form-group label:first-child {
     text-transform: uppercase;
     font-size: 0.9rem;
 }
+
+#back{
+    border-radius: 20px;
+    background-color: #d32a00;
+    color: #fff;
+}
