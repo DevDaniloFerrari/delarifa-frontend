@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src='{{ raffle.product.image }}' alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ raffle.name }}</h5>
+        <p class="card-text">{{ raffle.description }}</p>
+        <p><i class="fas fa-users"></i> Participantes: {{ raffle.participants.length }}</p>
+        <p><i class="fas fa-money-check-alt"></i> Valor: R$ {{ raffle.unitPrice }}</p>
+        <a href="#" class="btn btn-primary">Participar</a>
+    </div>
+</div>

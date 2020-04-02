@@ -4,10 +4,17 @@ import { CommonModule } from '@angular/common';
 //Providers
 import {
   UserService
-} from '@shared/providers'
+} from '@shared/providers';
+
+//Components
+import {
+  RaffleComponent
+} from '@shared/components' 
 
 @NgModule({
-  declarations: [],
+  declarations: [RaffleComponent],
+  entryComponents: [RaffleComponent],
+  exports: [RaffleComponent],
   imports: [
     CommonModule
   ]
