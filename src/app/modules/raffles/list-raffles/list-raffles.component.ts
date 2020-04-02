@@ -14,9 +14,13 @@ export class ListRafflesComponent implements OnInit {
     this.raffle.name = "Apple Watch";
     this.raffle.description = "Relógio inteligênte da Apple";
     this.raffle.participants = new Array<Participant>();
+    for (let index = 0; index < 20; index++) {
+      this.raffle.participants.push(new Participant());
+    }
     this.raffle.product = new Product();
     this.raffle.product.image = "https://i.ya-webdesign.com/images/apple-watch-png-3.png";
     this.raffle.unitPrice = 5;
+    this.raffle.maximumParticipants = 20;
    }
 
   ngOnInit() {

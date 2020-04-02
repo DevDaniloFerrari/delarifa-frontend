@@ -5,6 +5,6 @@
         <p class="card-text">{{ raffle.description }}</p>
         <p><i class="fas fa-users"></i> Participantes: {{ raffle.participants.length }}</p>
         <p><i class="fas fa-money-check-alt"></i> Valor: R$ {{ raffle.unitPrice }}</p>
-        <a href="#" class="btn btn-primary">Participar</a>
+        <button class="btn btn-primary" (click)="participate()">Participar</button>
     </div>
 </div>

@@ -1,0 +1,16 @@
+<div class="card">
+    <h5 class="card-header">Tabela de Números</h5>
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm" *ngFor="let participant of participants; let i = index">
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active">
+                            <input type="checkbox" checked autocomplete="off"> {{ i + 1}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

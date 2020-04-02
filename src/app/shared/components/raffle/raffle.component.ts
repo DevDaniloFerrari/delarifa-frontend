@@ -1,3 +1,4 @@
+import { Router, NavigationExtras, NavigationEnd } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { Raffle } from '@shared/models';
 
@@ -10,9 +11,20 @@ export class RaffleComponent implements OnInit {
 
   @Input() public raffle: Raffle;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  public participate() {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        "raffle": JSON.stringify(this.raffle),
+      }
+    };
+    this.router.navigate(['raffles/participate'], navigationExtras);
   }
 
 }
