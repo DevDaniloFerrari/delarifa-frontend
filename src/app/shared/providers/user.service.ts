@@ -19,6 +19,22 @@ export class UserService {
         ConfirmPassword: ['', Validators.required]
       }, { validators: this.comparePasswords })
     });
+ 
+    formModelsendEmail = this.fb.group({
+      UserName: ['', Validators.required],
+      Email: ['', Validators.compose([
+        Validators.email,
+        Validators.required
+      ])],
+      Message: ['', Validators.compose([
+        Validators.minLength(10),
+        Validators.maxLength(100),
+        Validators.required
+      ])]
+
+    });
+
+
 
     comparePasswords(fb: FormGroup) {
       const confirmPswrdCtrl = fb.get('ConfirmPassword');
@@ -48,4 +64,14 @@ export class UserService {
     getUserProfile() {
       return this.http.get(this.BaseURI + '/UserProfile');
     }
+
+    sendEmail() {
+      const body = {
+        UserName: this.formModelsendEmail.value.UserName,
+        Email: this.formModelsendEmail.value.Email,
+        Message: this.formModelsendEmail.value.Message
+      };
+      return this.http.post(this.BaseURI + '/ApplicationUser/SendEmail', body);
+    }
   }
+
