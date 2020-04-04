@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class UserService {
   constructor(private fb: FormBuilder, private http: HttpClient) {}
-  readonly BaseURI = 'http://localhost:55755/api';
+  readonly BaseURI = 'http://localhost:8000/api';
 
     formModel = this.fb.group({
       UserName: ['', Validators.required],
@@ -33,19 +33,29 @@ export class UserService {
 
     register() {
       const body = {
-        UserName: this.formModel.value.UserName,
-        Email: this.formModel.value.Email,
-        FullName: this.formModel.value.FullName,
-        Password: this.formModel.value.Passwords.Password
+        email : this.formModel.value.Email,
+        name: this.formModel.value.FullName,
+        password: this.formModel.value.Passwords.Password
       };
-      return this.http.post(this.BaseURI + '/ApplicationUser/Register', body);
+      console.log(body);
+      return this.http.post(this.BaseURI + '/register', body);
     }
-
+    
     login(formData) {
-      return this.http.post(this.BaseURI + '/ApplicationUser/Login', formData);
+      return this.http.post(this.BaseURI + '/login', formData);
     }
 
     getUserProfile() {
       return this.http.get(this.BaseURI + '/UserProfile');
     }
+
+    logout(token: string) {
+		console.log(token)
+		let headers = new HttpHeaders({ 
+			'Authorization': 'Bearer ' + token,
+			'Content-Type': 'application/json'
+		 });
+      return this.http.post(this.BaseURI + '/logout', { headers: headers });
+    }
+
   }

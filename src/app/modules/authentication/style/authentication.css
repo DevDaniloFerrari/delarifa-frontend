@@ -25,7 +25,7 @@ input.form-control:focus {
 
 button[type=submit].btn {
     border-radius: 20px;
-    background-color: #d32a00;
+    background-color: #5cb85c;
     color: #fff;
 }
 
@@ -111,3 +111,4 @@ div.form-group label:first-child {
     background-color: #d32a00;
     color: #fff;
 }
+

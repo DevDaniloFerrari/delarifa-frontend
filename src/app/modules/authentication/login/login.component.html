@@ -6,7 +6,7 @@
     <div class="wrapper">
         <div class="wrapped-div">
             <div class="tab-header">
-                <h2 routerLink='/login' routerLinkActive='class'>Entrar</h2>
+                <h2 routerLink='/login' routerLinkActive='text-success'>Entrar</h2>
                 <h2 routerLink='/registration' routerLinkActive='class'>Registrar-se</h2>
             </div>
             <div class="row">
@@ -18,12 +18,12 @@
             <form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
                 <div class="form-group">
                     <label>Usuário: </label>
-                    <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName"
+                    <input class="form-control" #UserName="ngModel" name="email" [(ngModel)]="formModel.UserName"
                         required>
                 </div>
                 <div class="form-group">
                     <label>Senha: </label>
-                    <input type="password" class="form-control" #Password="ngModel" name="Password"
+                    <input type="password" class="form-control" #Password="ngModel" name="password"
                         [(ngModel)]="formModel.Password" required>
                 </div>
                 <div class="form-row">

@@ -18,22 +18,8 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit() {
     this.service.register().subscribe(
-      (res: any) => {
-        if (res.succeeded) {
-          this.service.formModel.reset();
-          this.toastr.success('Novo usuário cadastrado!', 'Sucesso.');
-        } else {
-          res.errors.forEach(element => {
-            switch (element.code) {
-              case 'DuplicateUserName':
-                this.toastr.error('Usuário já cadastrado.', 'Falha.');
-                break;
-              default:
-                this.toastr.error(element.description, 'Falha.');
-                break;
-            }
-          });
-        }
+      (response: any) => {
+        console.log(response)
       },
       err => {
         console.log(err);
