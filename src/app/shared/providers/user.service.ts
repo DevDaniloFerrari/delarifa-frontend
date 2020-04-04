@@ -19,6 +19,20 @@ export class UserService {
         ConfirmPassword: ['', Validators.required]
       }, { validators: this.comparePasswords })
     });
+ 
+    formModelsendEmail = this.fb.group({
+      UserName: ['', Validators.required],
+      Email: ['', Validators.compose([
+        Validators.email,
+        Validators.required
+      ])],
+      Message: ['', Validators.compose([
+        Validators.minLength(10),
+        Validators.maxLength(100),
+        Validators.required
+      ])]
+
+    });
 
     comparePasswords(fb: FormGroup) {
       const confirmPswrdCtrl = fb.get('ConfirmPassword');
@@ -37,7 +51,6 @@ export class UserService {
         name: this.formModel.value.FullName,
         password: this.formModel.value.Passwords.Password
       };
-      console.log(body);
       return this.http.post(this.BaseURI + '/register', body);
     }
     
@@ -50,7 +63,6 @@ export class UserService {
     }
 
     logout(token: string) {
-		console.log(token)
 		let headers = new HttpHeaders({ 
 			'Authorization': 'Bearer ' + token,
 			'Content-Type': 'application/json'
@@ -58,4 +70,14 @@ export class UserService {
       return this.http.post(this.BaseURI + '/logout', { headers: headers });
     }
 
+    sendEmail() {
+      const body = {
+        UserName: this.formModelsendEmail.value.UserName,
+        Email: this.formModelsendEmail.value.Email,
+        Message: this.formModelsendEmail.value.Message
+      };
+      return this.http.post(this.BaseURI + '/ApplicationUser/SendEmail', body);
+    }
   }
+   
+
