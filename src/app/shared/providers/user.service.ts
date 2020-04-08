@@ -49,8 +49,9 @@ export class UserService {
       const body = {
         email : this.formModel.value.Email,
         name: this.formModel.value.FullName,
-        password: this.formModel.value.Passwords.Password
-      };
+		password: this.formModel.value.Passwords.Password,
+		password_confirmation: this.formModel.value.Passwords.ConfirmPassword
+	  };
       return this.http.post(this.BaseURI + '/register', body);
     }
     
