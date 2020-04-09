@@ -14,54 +14,30 @@
                 </div>
             </div>
 
-            <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+            <form [formGroup]="form">
                 <div class="form-group required">
-                    <label>Usuário: </label>
-                    <input class="form-control" formControlName="UserName">
-                    <label class="text-danger"
-                        *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">Campo
-                        obrigatório.</label>
+                    <label for="userName">Usuário:</label>
+                    <input type="text" class="form-control" formControlName="userName" id="userName">
                 </div>
-                <div class="form-group">
-                    <label>Email: </label>
-                    <input class="form-control" formControlName="Email">
-                    <label class="text-danger"
-                        *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Email
-                        inválido.</label>
-
+                <div class="form-group required">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" formControlName="email" id="email">
                 </div>
-                <div class="form-group">
-                    <label>Nome completo: </label>
-                    <input class="form-control" formControlName="FullName">
+                <div class="form-group required">
+                    <label for="fullName">Nome completo:</label>
+                    <input type="text" class="form-control" formControlName="fullName" id="fullName">
                 </div>
-                <div formGroupName="Passwords">
-                    <div class="form-group required">
-                        <label>Senha: </label>
-                        <input type="password" type="password" class="form-control" formControlName="Password">
-                        <label class="text-danger"
-                            *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">Campo
-                            obrigatório.</label>
-                        <label class="text-danger"
-                            *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Minímo
-                            de 4 caracteres requiridos.</label>
-
-                    </div>
-                    <div class="form-group required">
-                        <label>Confirme sua Senha: </label>
-                        <input class="form-control" formControlName="ConfirmPassword" type="password">
-                        <label class="text-danger"
-                            *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">Campo
-                            obrigatório.</label>
-                        <label class="text-danger"
-                            *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Senhas
-                            não coiencidem.</label>
-
-                    </div>
+                <div class="form-group required">
+                    <label for="password">Senha:</label>
+                    <input type="password" class="form-control" formControlName="password" id="password">
+                </div>
+                <div class="form-group required">
+                    <label for="confirmPassword">Confirme sua Senha:</label>
+                    <input type="password" class="form-control" formControlName="confirmPassword" id="confirmPassword">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8 offset-md-2">
-                        <button type="submit" class="btn btn-lg btn-block"
-                            [disabled]="!service.formModel.valid">Registrar</button>
+                        <button type="submit" class="btn btn-lg btn-block" (click)="register()">Registrar</button>
                     </div>
                 </div>
 

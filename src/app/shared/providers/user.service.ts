@@ -1,84 +1,33 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '@enviroments/environment';
+import { Observable } from 'rxjs';
+import { Authenticate, User } from '@shared/models';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class UserService {
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
-  readonly BaseURI = 'http://localhost:8000/api';
+  constructor(private httpClient: HttpClient) { }
 
-    formModel = this.fb.group({
-      UserName: ['', Validators.required],
-      Email: ['', Validators.email],
-      FullName: [''],
-      Passwords: this.fb.group({
-        Password: ['', [Validators.required, Validators.minLength(4)]],
-        ConfirmPassword: ['', Validators.required]
-      }, { validators: this.comparePasswords })
-    });
- 
-    formModelsendEmail = this.fb.group({
-      UserName: ['', Validators.required],
-      Email: ['', Validators.compose([
-        Validators.email,
-        Validators.required
-      ])],
-      Message: ['', Validators.compose([
-        Validators.minLength(10),
-        Validators.maxLength(100),
-        Validators.required
-      ])]
+  private readonly API_URL: string = environment.apiUrl;
 
-    });
-
-    comparePasswords(fb: FormGroup) {
-      const confirmPswrdCtrl = fb.get('ConfirmPassword');
-      if (confirmPswrdCtrl.errors == null || 'passwordMismatch' in confirmPswrdCtrl.errors) {
-        if (fb.get('Password').value !== confirmPswrdCtrl.value) {
-          confirmPswrdCtrl.setErrors({ passwordMismatch: true });
-        } else {
-          confirmPswrdCtrl.setErrors( null );
-        }
-      }
-    }
-
-    register() {
-      const body = {
-        email : this.formModel.value.Email,
-        name: this.formModel.value.FullName,
-		password: this.formModel.value.Passwords.Password,
-		password_confirmation: this.formModel.value.Passwords.ConfirmPassword
-	  };
-      return this.http.post(this.BaseURI + '/register', body);
-    }
-    
-    login(formData) {
-      return this.http.post(this.BaseURI + '/login', formData);
-    }
-
-    getUserProfile() {
-      return this.http.get(this.BaseURI + '/UserProfile');
-    }
-
-    logout(token: string) {
-		let headers = new HttpHeaders({ 
-			'Authorization': 'Bearer ' + token,
-			'Content-Type': 'application/json'
-		 });
-      return this.http.post(this.BaseURI + '/logout', { headers: headers });
-    }
-
-    sendEmail() {
-      const body = {
-        UserName: this.formModelsendEmail.value.UserName,
-        Email: this.formModelsendEmail.value.Email,
-        Message: this.formModelsendEmail.value.Message
-      };
-      return this.http.post(this.BaseURI + '/ApplicationUser/SendEmail', body);
-    }
+  public authenticate(authenticate: Authenticate): Observable<User> {
+    return this.httpClient.post<User>(`${this.API_URL}authenticates/login`, authenticate);
   }
-   
+
+  public register(user: User): Observable<User> {
+    return this.httpClient.post<User>(`${this.API_URL}authenticates/register`, user);
+  }
+
+  public logout(token: string) {
+    let headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + token,
+      'Content-Type': 'application/json'
+    });
+    return this.httpClient.post(`${this.API_URL}authenticates/logout`, { headers: headers });
+  }
+}
+
 

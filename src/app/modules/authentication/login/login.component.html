@@ -15,20 +15,18 @@
             </div>
 
             <img src="/assets/img/login.png" class="mx-auto d-block">
-            <form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
+            <form [formGroup]="form">
                 <div class="form-group">
-                    <label>Usuário: </label>
-                    <input class="form-control" #UserName="ngModel" name="email" [(ngModel)]="formModel.UserName"
-                        required>
+                    <label for="email">Usuário:</label>
+                    <input type="email" class="form-control" formControlName="email" name="email">
                 </div>
                 <div class="form-group">
-                    <label>Senha: </label>
-                    <input type="password" class="form-control" #Password="ngModel" name="password"
-                        [(ngModel)]="formModel.Password" required>
+                    <label for="password">Senha:</label>
+                    <input type="password" class="form-control" formControlName="password" name="password">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8 offset-md-2">
-                        <button type="submit" class="btn btn-lg btn-block" [disabled]="form.invalid">Entrar</button>
+                        <button type="submit" class="btn btn-lg btn-block" (click)="login()">Entrar</button>
                     </div>
                 </div>
             </form>

@@ -7,35 +7,22 @@
             produto. Entre em contato com a gente e o suporte responderá em 24 horas. Obrigado :)</p><br>
     </div>
     <div id="modal">
-        <form [formGroup]="service.formModelsendEmail" autocomplete="off" (submit)="onSubmit()">
+        <form [formGroup]="form">
             <div class="form-group required">
-                <label for="exampleFormControlInput1">Nome: </label>
-                <input type="text" class="form-control" formControlName="UserName" placeholder="Digite seu nome">
-                <label class="text-danger"
-                    *ngIf="service.formModelsendEmail.get('UserName').touched && service.formModelsendEmail.get('UserName').errors?.required">Campo
-                    obrigatório.</label>
+                <label for="subject">Assunto: </label>
+                <input type="text" class="form-control" id="subject" formControlName="subject" placeholder="Digite seu nome">
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Email:</label>
-                <input type="email" class="form-control" formControlName="Email" id="exampleFormControlInput1"
-                    placeholder="Digite seu email">
+            <div class="form-group required">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Digite seu email">
             </div>
-            <label class="text-danger"
-                *ngIf="service.formModelsendEmail.get('Email').touched && service.formModelsendEmail.get('Email').errors?.email">Email
-                inválido.</label>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Mensagem:</label>
-                <textarea class="form-control" maxlength="60" formControlName="Message" id="exampleFormControlTextarea1"
-                    rows="3"></textarea>
+            <div class="form-group required">
+                <label for="message">Mensagem:</label>
+                <textarea class="form-control" maxlength="60" id="message" formControlName="message" rows="3"></textarea>
             </div>
-            <small class="text-danger"
-                *ngIf="service.formModelsendEmail.get('Message').touched && service.formModelsendEmail.get('Message').errors?.required">
-                Este campo deve conter entre 10  e 100 caracteres
-            </small>
             <div class="form-row">
                 <div class="form-group col-md-8 offset-md-2">
-                    <button type="submit" class="btn btn-success"
-                        [disabled]="!service.formModelsendEmail.valid">Enviar</button>
+                    <button type="submit" class="btn btn-success" (click)="sendEmail()">Enviar</button>
                 </div>
             </div>
         </form>
