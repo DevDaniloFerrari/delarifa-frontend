@@ -1,9 +1,7 @@
 <div class="container">
-    <div class="row">
-      <div class="col">
-        <app-raffle [raffle]="raffle"></app-raffle>
-      </div>
-      <div class="col">
-        <app-raffle [raffle]="raffle2"></app-raffle>
-      </div>
+  <div class="row">
+    <div class="col" *ngFor="let raffle of raffles">
+      <app-raffle [raffle]="raffle"></app-raffle>
     </div>
+  </div>
+</div>
