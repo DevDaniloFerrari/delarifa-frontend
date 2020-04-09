@@ -1,4 +1,4 @@
-export class Authenticate {
+export class Authentication {
     public email: string;
     public password: string;
 

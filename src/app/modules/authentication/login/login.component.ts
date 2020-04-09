@@ -3,7 +3,7 @@ import { UserService } from 'src/app/shared/providers/user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Authenticate } from '@shared/models';
+import { Authentication } from '@shared/models';
 
 @Component({
 	selector: 'app-login',
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 		this.buildForm();
 	}
 
-	private verifyUserAlreadyLogged(){
+	private verifyUserAlreadyLogged() {
 		let token = localStorage.getItem('token');
 		if (token != null) {
 			this.router.navigateByUrl('/home');
@@ -42,12 +42,12 @@ export class LoginComponent implements OnInit {
 
 	public login() {
 		if (this.form.valid) {
-			let authenticate = new Authenticate(
+			let authentication = new Authentication(
 				this.form.controls.email.value,
 				this.form.controls.password.value
 			);
 
-			this.service.authenticate(authenticate).subscribe(
+			this.service.authenticate(authentication).subscribe(
 				(response: any) => {
 					if (response.code === 200) {
 						localStorage.setItem('token', response.tokenConf.original.access_token);

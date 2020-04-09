@@ -17,12 +17,14 @@
             <img src="/assets/img/login.png" class="mx-auto d-block">
             <form [formGroup]="form">
                 <div class="form-group">
-                    <label for="email">Usuário:</label>
+                    <label for="email">Email:</label>
                     <input type="email" class="form-control" formControlName="email" name="email">
+                    <span class="invalid" *ngIf="form.controls.email.invalid && form.controls.email.dirty">Preenchimento obrigatório.</span>
                 </div>
                 <div class="form-group">
                     <label for="password">Senha:</label>
                     <input type="password" class="form-control" formControlName="password" name="password">
+                    <span class="invalid" *ngIf="form.controls.password.invalid && form.controls.password.dirty">Preenchimento obrigatório.</span>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8 offset-md-2">

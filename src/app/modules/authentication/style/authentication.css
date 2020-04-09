@@ -2,6 +2,10 @@ html {
     min-height: 100%;
 }
 
+span {
+    color: red;
+}
+
 .background-color {
     background: -webkit-linear-gradient(left, #FFE53B, #FF2525); 
     background: -o-linear-gradient(right, #FFE53B, #FF2525); 
