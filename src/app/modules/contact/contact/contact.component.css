@@ -10,18 +10,12 @@
 
 }
 
-.container {
-    
-
+span {
+    color: red;
 }
 
 #tittle{
     text-align: center;
-}
-
-button {
-    border-radius: 15px;
-    background-color: #d32a00;
 }
 
 div.form-group label:not(.text-danger) {

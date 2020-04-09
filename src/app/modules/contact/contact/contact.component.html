@@ -1,27 +1,35 @@
 <div class="container">
     <div><br>
-        <h1 id="tittle"> Dúvidas? </h1>
+        <h1 id="tittle">Dúvidas?</h1>
     </div>
     <div class="text">
-        <p>Duvidas gerais ou caso queira ser um dos nossos parceiros disponibilizamos um retorno de 8% do valor do seu
+        <p>Dúvidas gerais ou caso queira ser um dos nossos parceiros disponibilizamos um retorno de 8% do valor do seu
             produto. Entre em contato com a gente e o suporte responderá em 24 horas. Obrigado :)</p><br>
     </div>
     <div id="modal">
         <form [formGroup]="form">
             <div class="form-group required">
-                <label for="subject">Assunto: </label>
-                <input type="text" class="form-control" id="subject" formControlName="subject" placeholder="Digite seu nome">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" formControlName="email"
+                    placeholder="Digite seu email">
+                <span class="invalid" *ngIf="form.controls.email.invalid && form.controls.email.dirty">Preenchimento
+                    obrigatório.</span>
             </div>
             <div class="form-group required">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Digite seu email">
+                <label for="subject">Assunto: </label>
+                <input type="text" class="form-control" id="subject" formControlName="subject"
+                    placeholder="Digite o assunto">
+                <span class="invalid" *ngIf="form.controls.subject.invalid && form.controls.subject.dirty">Preenchimento
+                    obrigatório</span>
             </div>
             <div class="form-group required">
                 <label for="message">Mensagem:</label>
-                <textarea class="form-control" maxlength="60" id="message" formControlName="message" rows="3"></textarea>
+                <textarea class="form-control" id="message" formControlName="message" rows="3"></textarea>
+                <span class="invalid" *ngIf="form.controls.message.invalid && form.controls.message.dirty">Preenchimento
+                    obrigatório.</span>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-8 offset-md-2">
+            <div class="form-row justify-content-center">
+                <div class="form-group">
                     <button type="submit" class="btn btn-success" (click)="sendEmail()">Enviar</button>
                 </div>
             </div>
