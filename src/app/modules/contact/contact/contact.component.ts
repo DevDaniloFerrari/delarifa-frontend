@@ -45,7 +45,7 @@ export class ContactComponent implements OnInit {
     );
   }
 
-  private cleanForm(){
+  private cleanForm() {
     this.form.reset();
   }
 
