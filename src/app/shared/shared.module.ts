@@ -1,5 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Providers
 import {
@@ -9,14 +10,16 @@ import {
 //Components
 import {
   RaffleComponent
-} from '@shared/components' 
+} from '@shared/components';
+import { CurriculumComponent } from './components/curriculum/curriculum.component'
 
 @NgModule({
-  declarations: [RaffleComponent],
+  declarations: [RaffleComponent, CurriculumComponent],
   entryComponents: [RaffleComponent],
   exports: [RaffleComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    NgbModule
   ]
 })
 export class SharedModule {
