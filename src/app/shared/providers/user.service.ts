@@ -14,19 +14,20 @@ export class UserService {
   private readonly API_URL: string = environment.apiUrl;
 
   public authenticate(authentication: Authentication): Observable<User> {
-    return this.httpClient.post<User>(`${this.API_URL}authentications/login`, authentication);
+    return this.httpClient.post<User>(`${this.API_URL}login`, authentication);
   }
 
   public register(user: User): Observable<User> {
-    return this.httpClient.post<User>(`${this.API_URL}authentications/register`, user);
+    return this.httpClient.post<User>(`${this.API_URL}register`, user);
   }
 
   public logout(token: string) {
     let headers = new HttpHeaders({
-      'Authorization': 'Bearer ' + token,
+      'Authorization': 'Bearer ' + `${token}`,
       'Content-Type': 'application/json'
     });
-    return this.httpClient.post(`${this.API_URL}authentications/logout`, { headers: headers });
+    console.log(token)
+    return this.httpClient.post(`${this.API_URL}logout`, { headers: headers });
   }
 }
 

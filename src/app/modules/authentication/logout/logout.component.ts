@@ -17,8 +17,6 @@ export class LogoutComponent implements OnInit {
     this.token = localStorage.getItem('token');
     this.service.logout(this.token).subscribe(
       (response: any) => {
-        console.log(response)
-
         if (response.code === 200) {
           localStorage.removeItem('token');
           this.router.navigateByUrl('/home');
