@@ -34,13 +34,17 @@
     "@ng-bootstrap/ng-bootstrap": "^6.0.2",
     "@ng-toolkit/serverless": "^8.1.0",
     "@ng-toolkit/universal": "^1.1.21",
+    "@types/compression": "^1.7.0",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "aws-serverless-express": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "ngx-toastr": "^10.0.4",
     "rxjs": "~6.5.5",
     "serverless": "^1.67.3",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "cors": "^2.8.5",
-    "aws-serverless-express": "^3.3.6"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.0-next.0",

@@ -190,7 +190,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/delarifa-frontend/production/1587048237145-2020-04-16T14:43:57.145Z/delarifa-frontend.zip"
+          "S3Key": "serverless/delarifa-frontend/production/1587051422401-2020-04-16T15:37:02.401Z/delarifa-frontend.zip"
         },
         "FunctionName": "delarifa-frontend-production-api",
         "Handler": "s_api.handler",
@@ -209,14 +209,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "ApiLambdaVersionriZxAFodgpxY5gnFdLOCWTjPW3XjJ26m0wVZbZQuoE": {
+    "ApiLambdaVersionv9Wrc9jQmwTScn7ylul0nSBHvUlkVuLIiiKIEHrgE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "lF2De7AA6OU4UxoKLdGQrCElaWLeK3D2lue5/UeX8Bg="
+        "CodeSha256": "3xuiRdBjSelT1NJ2j6K5Wu+FXnoSWeMqJlm3J45Df18="
       }
     },
     "ApiGatewayRestApi": {
@@ -336,7 +336,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1587048086213": {
+    "ApiGatewayDeployment1587051279745": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -495,7 +495,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/delarifa-frontend/production/1587048237145-2020-04-16T14:43:57.145Z/custom-resources.zip"
+          "S3Key": "serverless/delarifa-frontend/production/1587051422401-2020-04-16T15:37:02.401Z/custom-resources.zip"
         },
         "FunctionName": "delarifa-frontend-production-custom-resource-apigw-cw-role",
         "Handler": "apiGatewayCloudWatchRole/handler.handler",
@@ -551,7 +551,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionriZxAFodgpxY5gnFdLOCWTjPW3XjJ26m0wVZbZQuoE"
+        "Ref": "ApiLambdaVersionv9Wrc9jQmwTScn7ylul0nSBHvUlkVuLIiiKIEHrgE"
       }
     },
     "ServiceEndpoint": {
