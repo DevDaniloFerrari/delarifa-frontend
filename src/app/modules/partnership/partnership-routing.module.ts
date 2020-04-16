@@ -1,10 +1,10 @@
-import { PartnershipComponent } from './partnership/partnership.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { ListPartnershipComponent } from './list-partnership/list-partnership.component';
 
 
 const routes: Routes = [
-    { path: '', component: PartnershipComponent }
+    { path: '', component: ListPartnershipComponent }
   ];
 
 @NgModule({

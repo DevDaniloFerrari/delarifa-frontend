@@ -16,7 +16,7 @@ export class Curriculum {
         this.description = description;
         this.linkedin = linkedin;
         this.github = github;
-        this.technologies = technologies
+        this.technologies = technologies;
     }
 
 }

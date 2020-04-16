@@ -1,14 +1,18 @@
+import { ListPartnershipComponent } from './list-partnership/list-partnership.component';
+import { SharedModule } from '@shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PartnershipComponent } from './partnership/partnership.component';
 import { PartnershipRoutingModule } from './partnership-routing.module';
+import { PartnershipComponent } from '@shared/components';
 
 
 @NgModule({
-  declarations: [PartnershipComponent],
+  declarations: [ListPartnershipComponent],
+  entryComponents: [PartnershipComponent],
   imports: [
     CommonModule,
-    PartnershipRoutingModule
+    PartnershipRoutingModule,
+    SharedModule
   ]
 })
 export class PartnershipModule { }
