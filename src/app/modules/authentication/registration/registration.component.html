@@ -1,12 +1,13 @@
-<div class="container">
-    <div>
-        <button id="back" routerLink="/home" type="button" class="btn btn-secondary">Voltar</button>
-    </div>
-
+<div>
+    <button id="back" routerLink="/home" type="button" class="btn btn-secondary">Voltar</button>
+</div>
+<div class="container d-flex justify-content-center">
     <div id="modal">
         <form [formGroup]="form">
             <div class="row">
                 <div class="col-4">
+                    <h3 class="text-center">Dados Pessoais</h3>
+                    <hr>
                     <div class="form-group required">
                         <label for="fullName">Nome completo:</label>
                         <input type="text" class="form-control" formControlName="fullName" id="fullName">
@@ -72,6 +73,8 @@
                     </div>
                 </div>
                 <div class="col-4">
+                    <h3 class="text-center">Endereço</h3>
+                    <hr>
                     <div class="row">
                         <div class="col">
                             <div class="form-group required">
@@ -85,7 +88,7 @@
                         <div class="col">
                             <div class="form-group required">
                                 <label for="number">Numero:</label>
-                                <input type="text" class="form-control" formControlName="number" id="number">
+                                <input type="number" class="form-control" formControlName="number" id="number">
                                 <span class="invalid"
                                     *ngIf="form.controls.number.invalid && form.controls.number.dirty">Preenchimento
                                     obrigatório</span>
@@ -142,6 +145,8 @@
                     </div>
                 </div>
                 <div class="col-4">
+                    <h3 class="text-center">Dados de Login</h3>
+                    <hr>
                     <div class="form-group required">
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" formControlName="email" id="email">
@@ -154,7 +159,10 @@
                         <input type="email" class="form-control" formControlName="confirmEmail" id="confirmEmail">
                         <span class="invalid"
                             *ngIf="form.controls.confirmEmail.invalid && form.controls.confirmEmail.dirty">Preenchimento
-                            obrigatório</span>
+                            obrigatório</span><br>
+                        <span *ngIf="form.controls.confirmEmail.errors?.mustMatch">
+                            O email de confirmação está diferente
+                        </span>
                     </div>
                     <div class="form-group required">
                         <label for="password">Senha:</label>
@@ -169,18 +177,24 @@
                             id="confirmPassword">
                         <span class="invalid"
                             *ngIf="form.controls.confirmPassword.invalid && form.controls.confirmPassword.dirty">Preenchimento
-                            obrigatório</span>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-lg btn-block" (click)="register()">Registrar</button>
+                            obrigatório</span><br>
+                        <span *ngIf="form.controls.confirmPassword.errors?.mustMatch">
+                            A senha de confirmação está diferente
+                        </span>
                     </div>
                 </div>
             </div>
+            <div class="form-row justify-content-center">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-lg btn-block register-button"
+                        (click)="register()">Registrar</button>
+                </div>
+            </div>
         </form>
-        <p routerLink='/login' routerLinkActive='class'>Já é cadatrado?
-            <a routerLink='/login' routerLinkActive='class'>Login</a>
-        </p>
+        <div class="text-center">
+            <p routerLink='/login' routerLinkActive='class'>Já é cadastrado?
+                <a routerLink='/login' routerLinkActive='class'>Login</a>
+            </p>
+        </div>
     </div>
 </div>

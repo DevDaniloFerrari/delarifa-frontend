@@ -54,15 +54,12 @@ export class AboutComponent implements OnInit {
       '',
       ['', '']);
 
-      //ToDo-Kim
-      //Preencher o curriculo
-
     this.kimCurriculum = new Curriculum(
-      '',
-      '',
-      '',
-      '',
-      ['', '']);
+      'Kim Kokubun',
+      'Sou desenvolvedor FullStack em uma empresa que presta serviços Financeiros',
+      'https://www.linkedin.com/in/kim-silveira-882296161/',
+      'https://github.com/kimkokubun',
+      ['Java', 'Angular', 'PostgreSQl', 'NodeJs']);
 
   }
 }
