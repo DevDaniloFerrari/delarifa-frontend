@@ -4,19 +4,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Providers
 import {
-  UserService
+  UserService, RaffleService, EmailService, PartnershipService
 } from '@shared/providers';
 
 //Components
 import {
-  RaffleComponent
+  RaffleComponent, CurriculumComponent, PartnershipComponent
 } from '@shared/components';
-import { CurriculumComponent } from './components/curriculum/curriculum.component'
+
+
 
 @NgModule({
-  declarations: [RaffleComponent, CurriculumComponent],
+  declarations: [RaffleComponent, CurriculumComponent, PartnershipComponent],
   entryComponents: [RaffleComponent],
-  exports: [RaffleComponent],
+  exports: [RaffleComponent, PartnershipComponent, CurriculumComponent],
   imports: [
     CommonModule,
     NgbModule
@@ -27,8 +28,8 @@ export class SharedModule {
     return {
       ngModule: SharedModule,
       providers: [
-        UserService
+        UserService, PartnershipService, EmailService, RaffleService
       ]
-    }
+    };
   }
 }

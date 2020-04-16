@@ -33,15 +33,15 @@ export class AboutComponent implements OnInit {
       'Sou desenvolvedor Fullstack em uma empresa de compras colaborativas.',
       'https://www.linkedin.com/in/danilo-ferrari-5830a4161',
       'https://www.github.com/DevDaniloFerrari',
-      ['C#', '.NET Core', 'Angular', 'Azure', 'AWS', 'SQL Server'])
+      ['C#', '.NET Core', 'Angular', 'Azure', 'AWS', 'SQL Server']);
 
 
     this.lucasCurriculum = new Curriculum(
-      '',
-      '',
-      '',
-      '',
-      ['', '']);
+      'Lucas Oliveira',
+      'Desenvolvedor Fullstack',
+      'https://www.linkedin.com/in/lucas-oliveira-91a27716a',
+      'https://github.com/DevLucasOliveira',
+      ['C#', '.NET Core', 'Angular', 'SQL Server']);
 
 
     this.manoelCurriculum = new Curriculum(
