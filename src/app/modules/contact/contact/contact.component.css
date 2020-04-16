@@ -14,8 +14,10 @@ span {
 }
 
 #tittle{
-    text-align: center;
+   text-align: center;
+    color: rgb(212, 108, 23);
 }
+    
 
 div.form-group label:not(.text-danger) {
     color: #545d6a;

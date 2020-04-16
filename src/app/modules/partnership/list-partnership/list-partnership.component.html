@@ -1,7 +1,84 @@
 <div class="container">
-    <div class="row">
-      <div class="col" *ngFor="let partnership of partnerships">
-        <app-partnership partnership="partnership"></app-partnership>
-      </div>
+  <div class="row">
+    <div class="col" *ngFor="let partnership of partnerships">
+      <app-partnership [partnership]="partnership"></app-partnership>
     </div>
   </div>
+</div>
+<div class="container">
+  <div>
+    <h2 id="tittle">Como funciona?</h2>
+  </div>
+
+  <div class="text">
+    <p>Os nossos parceiros têm um benefício financeiro que é retornado em cima do valor original do produto. É destinado
+      a empresas, microempresas, ou pessoas que vendem produtos legais, mas possuem CNPJ em seu nome. Os produtos devem
+      ser
+      novos e com garantia, e que caso houver algum problema com o produto o mesmo possa se responsabilizar.
+    </p>
+    <p>A Dela Rifa tem por objetivo fornecer o meio de contato e venda e nos responsabilizamos pela entrega do produto.
+      O
+      benefício
+      para parceiros é de 15% a mais no valor do seu produto e o retorno será pago quando a rifa for
+      sorteada.</p>
+    <br>
+  </div>
+  <div>
+    <h2 id="tittle">Como ser?</h2>
+  </div>
+  <div class="text">
+    <p>Caso deseja ser um de nossos parceios em nossa aba de<a routerLink='/contact'> contato </a>só preencher as
+      informações que o nosso suporte irá avaliar e entrar em contato.</p><br>
+  </div>
+
+  <h2 id="tittle">Casos</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Empresa</th>
+        <th scope="col">Produtos rifados</th>
+        <th scope="col">Valor dos produtos</th>
+        <th scope="col">Faturamento (15%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Americanas</th>
+        <td>32</td>
+        <td>R$ 40.500</td>
+        <td>R$ 6.075</td>
+      </tr>
+      <tr>
+        <th scope="row">Amazon</th>
+        <td>15</td>
+        <td>R$ 12.000</td>
+        <td>R$ 1.800</td>
+      </tr>
+      <tr>
+        <th scope="row">Pichau</th>
+        <td>7</td>
+        <td>R$ 21.000</td>
+        <td>R$ 3.150</td>
+      </tr>
+      <tr>
+        <th scope="row">Centauro</th>
+        <td>9</td>
+        <td>R$ 2.700</td>
+        <td>R$ 405</td>
+      </tr>
+      <tr>
+        <th scope="row">The Games</th>
+        <td>21</td>
+        <td>R$ 4.200</td>
+        <td>R$ 630</td>
+      </tr>
+      <tr>
+        <th scope="row">Extra</th>
+        <td>3</td>
+        <td>R$ 1.200</td>
+        <td>R$ 180</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+</div>

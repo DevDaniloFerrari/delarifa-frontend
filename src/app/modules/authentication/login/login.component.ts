@@ -8,7 +8,7 @@ import { Authentication } from '@shared/models';
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
-	styleUrls: ['./../style/authentication.css'],
+	styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
 

@@ -3,16 +3,18 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '@shared/providers';
 import { Router } from '@angular/router';
-import { User, Authentication } from '@shared/models';
+import { User, Authentication, MaritalStatus, Gender } from '@shared/models';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./../style/authentication.css'],
+  styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
 
   public form: FormGroup;
+  public MaritalStatus = MaritalStatus;
+  public Gender = Gender;
 
   constructor(
     private userService: UserService,
@@ -29,23 +31,21 @@ export class RegistrationComponent implements OnInit {
     this.form = this.formBuilder.group({
       fullName: ['', Validators.required],
       email: ['', Validators.compose([Validators.email, Validators.required])],
-      confirmEmail: ['', Validators.compose([Validators.email, Validators.required])], //campo novo
+      confirmEmail: ['', Validators.compose([Validators.email, Validators.required])],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-      maritalStatus: ['', Validators.required], //campo novo
-      address: this.formBuilder.group({ //campo novo
-        street: ['', Validators.required], //campo novo
-        number: ['', Validators.required], //campo novo
-        state: ['', Validators.required], //campo novo
-        city: ['', Validators.required], //campo novo
-        country: ['', Validators.required], //campo novo
-        neighborhood: ['', Validators.required], //campo novo
-        postalCode: ['', Validators.required] //campo novo
-      }),
-      homePhone: ['', Validators.required], //campo novo
-      cellPhone: ['', Validators.required], //campo novo 
-      birthDate: ['', Validators.required], //campo novo
-      gender: ['', Validators.required] //campo novo
+      maritalStatus: ['', Validators.required],
+      street: ['', Validators.required],
+      number: ['', Validators.required],
+      state: ['', Validators.required],
+      city: ['', Validators.required],
+      country: ['', Validators.required],
+      neighborhood: ['', Validators.required],
+      postalCode: ['', Validators.required],
+      homePhone: ['', Validators.required],
+      cellPhone: ['', Validators.required],
+      birthDate: ['', Validators.required],
+      gender: ['', Validators.required]
     });
   }
 
@@ -72,18 +72,17 @@ export class RegistrationComponent implements OnInit {
 
     let value = this.form.value;
 
-    //ToDo-Lucas
-    //Instanciar e retornar um novo User com as novas propriedades 
-
-    return null;
-
-    // return new User(
-    //   value.fullName,
-    //   value.birthDate,
-    //   value.gender,
-    //   value.email,
-    //   value.email
-    // )
+    return new User(
+      value.fullName,
+      value.birthDate,
+      value.gender,
+      value.email,
+      value.password,
+      value.MaritalStatus,
+      value.addres,
+      value.homePhone,
+      value.cellPhone
+    );
   }
 
   private getAuthenticationFromForm(): Authentication {
