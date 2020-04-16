@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '@shared/providers';
 
 @Component({
   selector: 'app-navbar',
@@ -7,19 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  public token;
-  public link = 'Login';
-  public route = 'login';
-  public showRegister = '';
-  constructor() { }
+  public token: string;
+
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
+    this.getToken();
+  }
+
+  private getToken() {
     this.token = localStorage.getItem('token');
-    if (this.token != null) {
-      this.link = 'Logout';
-      this.route = 'logout';
-      this.showRegister = 'd-none';
-    }
+  }
+
+  public login() {
+    this.router.navigate(['/login']);
+  }
+
+  public logout() {
+    this.userService.logout(this.token).subscribe(
+      (response: any) => {
+        if (response.code === 200) {
+          localStorage.removeItem('token');
+          this.router.navigateByUrl('/home');
+        }
+      },
+    );
   }
 
 }

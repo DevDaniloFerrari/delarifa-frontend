@@ -1,0 +1,15 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "project": "delarifa-frontend",
+    "skipInstall": false,
+    "directory": ".",
+    "lambdaTS": false,
+    "offline": false,
+    "clientProject": "delarifa-frontend",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}
