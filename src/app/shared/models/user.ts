@@ -9,7 +9,7 @@ export class User {
     public password: string;
     public maritalStatus: MaritalStatus;
     public address: Address;
-    public homePhone : string;
+    public homePhone: string;
     public cellPhone: string;
 
     constructor(
