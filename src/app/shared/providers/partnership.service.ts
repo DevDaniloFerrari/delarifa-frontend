@@ -26,7 +26,7 @@ export class PartnershipService {
     partnership1.idPartnership = 1;
     partnership1.name = "Americanas";
     partnership1.description = "A maior rede de vendas do país";
-    partnership1.image = "https://images-americanas.b2w.io/zion/manifest/icons/1f3cb37c9be5fb0e9dd16b6ac97e213c.opengraph-image.png";
+    partnership1.image = "https://pbs.twimg.com/profile_images/1207310445331329024/t1Q69r3l_400x400.jpg";
 
     partnership2.idPartnership = 2;
     partnership2.name = "Amazon";

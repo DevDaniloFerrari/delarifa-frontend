@@ -1,8 +1,8 @@
-<div class="container">
-    <div>
-        <button id="back" routerLink="/home" type="button" class="btn btn-secondary">Voltar</button>
-    </div>
+<div>
+    <button routerLink="/home" type="button" class="btn btn-secondary">Voltar</button>
+</div>
 
+<div class="container d-flex justify-content-center">
     <div id="modal">
 
         <img src="/assets/img/login.png" class="mx-auto d-block">
@@ -22,7 +22,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-8 offset-md-2">
-                    <button type="submit" class="btn btn-lg btn-block" (click)="login()">Entrar</button>
+                    <button type="submit" class="btn btn-lg btn-block login-button" (click)="login()">Entrar</button>
                 </div>
             </div>
         </form>

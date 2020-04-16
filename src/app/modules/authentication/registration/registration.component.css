@@ -9,16 +9,8 @@
     box-shadow: 3px 4px 14px 0px rgba(0, 0, 0, 0.39);;
 }
 
-button{
+.register-button{
     background-color: rgb(248, 155, 68);
-    align-items: center !important;
-    flex-direction: column;
-    justify-content: center !important;
-    display: flex;
-    text-align: center !important;
-}
-
-.form-group{
     align-items: center !important;
     flex-direction: column;
     justify-content: center !important;
@@ -64,9 +56,6 @@ div.form-group label:first-child {
     font-size: 0.9rem;
 }
 
-#back{
-    border-radius: 20px;
-    background-color: rgb(248, 155, 68);
-    color: #fff;
+h3 {
+    color: rgb(212, 108, 23);
 }
-
