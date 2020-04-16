@@ -13,6 +13,7 @@ export class AboutComponent implements OnInit {
   public daniloCurriculum: Curriculum;
   public lucasCurriculum: Curriculum;
   public manoelCurriculum: Curriculum;
+  public kimCurriculum: Curriculum;
 
   constructor(
     private modalService: NgbModal
@@ -43,8 +44,20 @@ export class AboutComponent implements OnInit {
       'https://github.com/DevLucasOliveira',
       ['C#', '.NET Core', 'Angular', 'SQL Server']);
 
+      //ToDo-Manoel
+      //Preencher o curriculo
 
     this.manoelCurriculum = new Curriculum(
+      '',
+      '',
+      '',
+      '',
+      ['', '']);
+
+      //ToDo-Kim
+      //Preencher o curriculo
+
+    this.kimCurriculum = new Curriculum(
       '',
       '',
       '',
