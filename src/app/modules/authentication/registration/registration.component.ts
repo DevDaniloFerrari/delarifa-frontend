@@ -29,8 +29,23 @@ export class RegistrationComponent implements OnInit {
     this.form = this.formBuilder.group({
       fullName: ['', Validators.required],
       email: ['', Validators.compose([Validators.email, Validators.required])],
+      confirmEmail: ['', Validators.compose([Validators.email, Validators.required])], //campo novo
       password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required],
+      maritalStatus: ['', Validators.required], //campo novo
+      address: this.formBuilder.group({ //campo novo
+        street: ['', Validators.required], //campo novo
+        number: ['', Validators.required], //campo novo
+        state: ['', Validators.required], //campo novo
+        city: ['', Validators.required], //campo novo
+        country: ['', Validators.required], //campo novo
+        neighborhood: ['', Validators.required], //campo novo
+        postalCode: ['', Validators.required] //campo novo
+      }),
+      homePhone: ['', Validators.required], //campo novo
+      cellPhone: ['', Validators.required], //campo novo 
+      birthDate: ['', Validators.required], //campo novo
+      gender: ['', Validators.required] //campo novo
     });
   }
 
@@ -54,11 +69,21 @@ export class RegistrationComponent implements OnInit {
   }
 
   private getUserFromForm(): User {
-    return new User(
-      this.form.controls.fullName.value,
-      this.form.controls.email.value,
-      this.form.controls.password.value
-    );
+
+    let value = this.form.value;
+
+    //ToDo-Lucas
+    //Instanciar e retornar um novo User com as novas propriedades 
+
+    return null;
+
+    // return new User(
+    //   value.fullName,
+    //   value.birthDate,
+    //   value.gender,
+    //   value.email,
+    //   value.email
+    // )
   }
 
   private getAuthenticationFromForm(): Authentication {
