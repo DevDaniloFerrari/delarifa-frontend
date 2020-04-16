@@ -58,14 +58,15 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "opencollective": "^1.0.3",
     "protractor": "~5.4.0",
+    "serverless": "^1.60.0",
+    "serverless-api-compression": "^1.0.1",
+    "serverless-apigw-binary": "^0.4.4",
+    "ts-loader": "^6.2.1",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
     "typescript": "^3.8.3",
-    "ts-loader": "^6.2.1",
-    "webpack-cli": "^3.3.10",
-    "opencollective": "^1.0.3",
-    "serverless": "^1.60.0",
-    "serverless-apigw-binary": "^0.4.4"
+    "webpack-cli": "^3.3.10"
   }
 }
