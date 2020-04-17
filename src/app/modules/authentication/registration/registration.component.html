@@ -79,7 +79,7 @@
                         <div class="col">
                             <div class="form-group required">
                                 <label for="street">Rua:</label>
-                                <input type="text" class="form-control" formControlName="street" id="street">
+                                <input type="text" readonly="true" class="form-control" formControlName="street" id="street">
                                 <span class="invalid"
                                     *ngIf="form.controls.street.invalid && form.controls.street.dirty">Preenchimento
                                     obrigatório</span>
@@ -99,7 +99,7 @@
                         <div class="col">
                             <div class="form-group required">
                                 <label for="neighborhood">Bairro:</label>
-                                <input type="text" class="form-control" formControlName="neighborhood"
+                                <input type="text" readonly="true" class="form-control" formControlName="neighborhood"
                                     id="neighborhood">
                                 <span class="invalid"
                                     *ngIf="form.controls.neighborhood.invalid && form.controls.neighborhood.dirty">Preenchimento
@@ -109,7 +109,7 @@
                         <div class="col">
                             <div class="form-group required">
                                 <label for="postalCode">CEP:</label>
-                                <input type="text" class="form-control" formControlName="postalCode" id="postalCode">
+                                <input type="text" maxlength="8" class="form-control" formControlName="postalCode" id="postalCode" (keyup)="getViacep()">
                                 <span class="invalid"
                                     *ngIf="form.controls.postalCode.invalid && form.controls.postalCode.dirty">Preenchimento
                                     obrigatório</span>
@@ -120,7 +120,7 @@
                         <div class="col">
                             <div class="form-group required">
                                 <label for="state">Estado:</label>
-                                <input type="text" class="form-control" formControlName="state" id="state">
+                                <input type="text" readonly="true" class="form-control" formControlName="state" id="state">
                                 <span class="invalid"
                                     *ngIf="form.controls.state.invalid && form.controls.state.dirty">Preenchimento
                                     obrigatório</span>
@@ -129,7 +129,7 @@
                         <div class="col">
                             <div class="form-group required">
                                 <label for="city">Cidade:</label>
-                                <input type="text" class="form-control" formControlName="city" id="city">
+                                <input type="text" readonly="true" class="form-control" formControlName="city" id="city">
                                 <span class="invalid"
                                     *ngIf="form.controls.city.invalid && form.controls.city.dirty">Preenchimento
                                     obrigatório</span>
