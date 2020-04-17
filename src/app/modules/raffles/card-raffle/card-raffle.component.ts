@@ -7,12 +7,19 @@ import { Participant } from '@shared/models';
   styleUrls: ['./card-raffle.component.css']
 })
 export class CardRaffleComponent implements OnInit {
+  toggle = true;
 
   @Input() public participants: Array<Participant>;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  changeColor() {
+    this.toggle = !this.toggle;
+
   }
 
 }
