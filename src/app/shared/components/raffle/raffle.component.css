@@ -4,10 +4,11 @@
   object-fit: cover;
 }
 
-.card {
+.card-raffle {
   width: 18rem;
   display: flex;
-  height: 40rem;
-  max-height: 45rem;
+  height: 30rem;
+  max-height: 40rem;
   justify-content: space-between;
+  position: relative;
 }
