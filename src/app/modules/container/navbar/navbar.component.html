@@ -24,10 +24,10 @@
         </ul>
         <ul class="navbar-nav navbar-right">
             <li class="nav-item" *ngIf="token == undefined">
-                <a class="nav-link cursor-pointer" (click)="login()"><i class="fas fa-user-plus"></i> Login</a>
+                <a class="nav-link cursor-pointer" (click)="login()"><i class="fas fa-sign-in-alt"></i> Login</a>
             </li>
             <li class="nav-item" *ngIf="token != undefined">
-                <a class="nav-link cursor-pointer" (click)="logout()"><i class="fas fa-sign-in-alt"></i> Logout</a>
+                <a class="nav-link cursor-pointer" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </li>
         </ul>
     </div>
