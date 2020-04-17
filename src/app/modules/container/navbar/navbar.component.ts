@@ -32,8 +32,8 @@ export class NavbarComponent implements OnInit {
     this.userService.logout(this.token).subscribe(
       (response: any) => {
         if (response.code === 200) {
-          localStorage.removeItem('token');
-          this.router.navigateByUrl('/home');
+            localStorage.removeItem('token');
+            this.router.navigate(['/home']);
         }
       },
     );
