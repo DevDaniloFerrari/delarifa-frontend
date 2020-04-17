@@ -48,11 +48,11 @@ export class AboutComponent implements OnInit {
       //Preencher o curriculo
 
     this.manoelCurriculum = new Curriculum(
-      '',
-      '',
-      '',
-      '',
-      ['', '']);
+      'Manoel Merlin',
+      'Desenvolvedor Web Fullstack',
+      'https://www.linkedin.com/in/manoel-merlin-neto-596904184/',
+      'https://github.com/manoelmerlin',
+      ['PHP', 'Angular', 'Jquery', 'MySql']);
 
     this.kimCurriculum = new Curriculum(
       'Kim Kokubun',

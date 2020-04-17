@@ -206,7 +206,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/delarifa-frontend/production/1587073435141-2020-04-16T21:43:55.141Z/delarifa-frontend.zip"
+                "S3Key": "serverless/delarifa-frontend/production/1587075044569-2020-04-16T22:10:44.569Z/delarifa-frontend.zip"
               },
               "FunctionName": "delarifa-frontend-production-api",
               "Handler": "s_api.handler",
@@ -225,14 +225,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ApiLambdaVersionsvOfI95poR2to6qzNGA6RM62T6UNLViFlWQihbjVM": {
+          "ApiLambdaVersion5jw7bIA9KM6W409rUIiwpMeDdzA8t5ib0GdH7pgsDg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ApiLambdaFunction"
               },
-              "CodeSha256": "yCi2mISI5BdAByKmHBVThFmdrxYaaM9sFSOEnWQB/nA="
+              "CodeSha256": "RgNY8ucavI7KUBJN9L5TiLWoCmfHnuVONm6TNBgORHE="
             }
           },
           "ApiGatewayRestApi": {
@@ -352,7 +352,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1587073253806": {
+          "ApiGatewayDeployment1587074879358": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -511,7 +511,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/delarifa-frontend/production/1587073435141-2020-04-16T21:43:55.141Z/custom-resources.zip"
+                "S3Key": "serverless/delarifa-frontend/production/1587075044569-2020-04-16T22:10:44.569Z/custom-resources.zip"
               },
               "FunctionName": "delarifa-frontend-production-custom-resource-apigw-cw-role",
               "Handler": "apiGatewayCloudWatchRole/handler.handler",
@@ -567,7 +567,7 @@
           "ApiLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ApiLambdaVersionsvOfI95poR2to6qzNGA6RM62T6UNLViFlWQihbjVM"
+              "Ref": "ApiLambdaVersion5jw7bIA9KM6W409rUIiwpMeDdzA8t5ib0GdH7pgsDg"
             }
           },
           "ServiceEndpoint": {
@@ -702,7 +702,7 @@
         "timeout": 10,
         "runtime": "nodejs10.x",
         "vpc": {},
-        "versionLogicalId": "ApiLambdaVersionsvOfI95poR2to6qzNGA6RM62T6UNLViFlWQihbjVM"
+        "versionLogicalId": "ApiLambdaVersion5jw7bIA9KM6W409rUIiwpMeDdzA8t5ib0GdH7pgsDg"
       }
     },
     "serviceFilename": "serverless.yml",
@@ -716,7 +716,7 @@
     "artifact": "C:\\Projetos\\delarifa-frontend\\.serverless\\delarifa-frontend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/delarifa-frontend/production/1587073435141-2020-04-16T21:43:55.141Z",
+    "artifactDirectoryName": "serverless/delarifa-frontend/production/1587075044569-2020-04-16T22:10:44.569Z",
     "artifact": "delarifa-frontend.zip"
   }
 }

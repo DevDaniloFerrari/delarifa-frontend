@@ -1,10 +1,11 @@
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src='{{ raffle.product.image }}' alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{ raffle.name }}</h5>
-        <p class="card-text">{{ raffle.description }}</p>
-        <p><i class="fas fa-users"></i> Participantes: {{ raffle.participants.length }}</p>
-        <p><i class="fas fa-money-check-alt"></i> Valor: R$ {{ raffle.unitPrice }}</p>
-        <button class="btn btn-primary" (click)="participate()">Participar</button>
-    </div>
+<div class="card card-raffle">
+  <img class="card-img-top" src='{{ raffle.product.image }}' alt="Card image cap">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">{{ raffle.name }}</h5>
+    <p class="card-text">{{ raffle.description }}</p>
+    <p><i class="fas fa-users"></i> Participantes: {{ raffle.participants.length }}</p>
+    <p><i class="fas fa-money-check-alt"></i> Valor: R$ {{ raffle.unitPrice }}</p>
+    <button class="mt-auto btn btn-lg btn-block btn-primary" (click)="participate()">Participar</button>
+  </div>
 </div>
+<br>

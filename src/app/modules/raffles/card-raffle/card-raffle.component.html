@@ -4,11 +4,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm" *ngFor="let participant of participants; let i = index">
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-                            <input type="checkbox" checked autocomplete="off"> {{ i + 1}}
-                        </label>
-                    </div>
+                  <div class="btn-group-toggle" data-toggle="buttons" style="padding: 15px">
+                    <label class="btn btn-secondary active" style="width: 50px; height: 50px"
+                           [ngClass]="{'green' : toggle}" (click)="changeColor()">
+                      <input type="checkbox" checked autocomplete="off">
+                      <p style="font-size: 14px">{{ i + 1}}</p>
+                    </label>
+                  </div>
                 </div>
             </div>
         </div>

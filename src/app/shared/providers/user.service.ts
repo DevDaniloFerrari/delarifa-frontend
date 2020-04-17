@@ -23,10 +23,9 @@ export class UserService {
 
   public logout(token: string) {
     let headers = new HttpHeaders({
-      'Authorization': 'Bearer ' + `${token}`,
+      'Authorization': 'Bearer ' + '"'+token+'"',
       'Content-Type': 'application/json'
     });
-    console.log(token)
     return this.httpClient.post(`${this.API_URL}logout`, { headers: headers });
   }
 }
