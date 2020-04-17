@@ -93,7 +93,7 @@ export class RegistrationComponent implements OnInit {
 
     let value = this.form.value;
 
-    return new User(
+    let user = new User(
       value.fullName,
       value.birthDate,
       value.gender,
@@ -104,6 +104,10 @@ export class RegistrationComponent implements OnInit {
       value.homePhone,
       value.cellPhone
     );
+
+    user.password_confirmation = value.confirmPassword;
+
+    return user;
   }
 
   private getAuthenticationFromForm(): Authentication {

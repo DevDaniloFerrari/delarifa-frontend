@@ -2,18 +2,19 @@ import { Gender, Address, MaritalStatus } from '.';
 
 export class User {
     public idUser: number;
-    public fullName: string;
+    public name: string;
     public birthDate: Date;
     public gender: Gender;
     public email: string;
     public password: string;
+    public password_confirmation: string;
     public maritalStatus: MaritalStatus;
     public address: Address;
     public homePhone: string;
     public cellPhone: string;
 
     constructor(
-        fullName: string,
+        name: string,
         birthDate: Date,
         gender: Gender,
         email: string,
@@ -23,7 +24,7 @@ export class User {
         homePhone: string,
         cellPhone: string
     ) {
-        this.fullName = fullName;
+        this.name = name;
         this.birthDate = birthDate;
         this.gender = gender;
         this.email = email;
