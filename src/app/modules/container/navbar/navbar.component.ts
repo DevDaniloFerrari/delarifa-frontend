@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
   }
 
   public logout() {
-    console.log(this.token)
+    console.log(this.token);
     this.userService.logout(this.token).subscribe(
       (response: any) => {
         if (response.code === 200) {

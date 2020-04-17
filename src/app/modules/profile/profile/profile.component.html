@@ -1,0 +1,43 @@
+<div class="container">
+    <div id="modal">
+        <div>
+            <p>Nome completo:  {{ profile.fullName }}</p>
+        </div>
+        <div>
+            <p>Data de nascimento: {{ profile.birthDate }} </p> 
+        </div>
+        <div>
+            <p>Sexo: {{ profile.gender }} </p>
+        </div>
+        <div>
+            <p>Estado civil: {{ profile.maritalStatus }} </p>
+        </div>
+        <div>
+            <p>Telefone: {{ profile.homePhone }} </p>
+        </div>
+        <div>
+            <p>Celular: {{ profile.cellPhone }} </p>
+        </div>
+        <div>
+            <p>Email: {{ profile.email }} </p>
+        </div>
+        <div>
+            <p>Endereço: {{ profile.address.street }} </p>
+        </div>
+        <div>
+            <p>Número: {{ profile.address.number }} </p>
+        </div>
+        <div>
+            <p>CEP: {{ profile.address.postalCode}} </p>
+        </div>
+        <div>
+            <p>Bairro: {{ profile.address.neighborhood}} </p>
+        </div>
+        <div>
+            <p>Cidade: {{ profile.address.city}} </p>
+        </div>
+        <div>
+            <p>País: {{ profile.address.country}} </p>
+        </div>
+    </div>
+</div>

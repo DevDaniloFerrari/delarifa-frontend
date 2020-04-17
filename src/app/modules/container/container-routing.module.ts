@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { InitialPageComponent } from './initial-page/initial-page.component';
 
 const routes: Routes = [
@@ -25,6 +25,10 @@ const routes: Routes = [
         {
           path: 'raffles',
           loadChildren: () => import('../raffles/raffles.module').then(m => m.RafflesModule)
+        },
+        {
+          path: 'profile',
+          loadChildren: () => import('../profile/profile.module').then(m => m.ProfileModule)
         },
         {
           path: '**',
